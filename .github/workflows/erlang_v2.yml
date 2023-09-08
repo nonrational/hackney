@@ -22,10 +22,9 @@ jobs:
           pip3 install gunicorn
           gunicorn -b 127.0.0.1:8000 -b unix:httpbin.sock httpbin:app&
       - uses: erlef/setup-beam@v1
-          with:
-            otp-version: ${{matrix.otp}}
-            rebar3-version: ${{matrix.rebar3}}
-
+        with:
+          otp-version: ${{matrix.otp}}
+          rebar3-version: ${{matrix.rebar3}}
       - run: rebar3 xref
       - run: rebar3 eunit
       - run: rebar3 dialyzer
