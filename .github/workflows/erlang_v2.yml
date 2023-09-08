@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        otp: ["22.2"]
+        otp: ["25"]
         os: [ubuntu-latest]
         rebar3: ['3.22.1']
     steps:
